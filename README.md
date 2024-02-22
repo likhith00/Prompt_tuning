@@ -28,7 +28,7 @@ twitter_complaints used in this prompt tuning task. It subset of the RAFT datase
 
 # Usage
 
-`
+```
 from peft import AutoPeftModelForCausalLM
 from transformers import AutoTokenizer
 
@@ -47,6 +47,5 @@ with torch.no_grad():
         input_ids=inputs["input_ids"], attention_mask=inputs["attention_mask"], max_new_tokens=10, eos_token_id=3
     )
     print(tokenizer.batch_decode(outputs.detach().cpu().numpy(), skip_special_tokens=True))
-`
-
+```
 
